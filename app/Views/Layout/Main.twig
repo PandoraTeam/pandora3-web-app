@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		{# <link rel="stylesheet" href="/css/main.css"> #}
+		<title>{{ pageTitle ?: 'Web application' }}</title>
+		{% block styles %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			<div class="header-right">
+				{% if user %}
+					<div class="header-item user-login"><i class="mdi mdi-account"></i>{{ user.login }}</div><!--
+					--><a href="/auth/sign-out" class="header-item"><i class="mdi mdi-logout-variant"></i>Выйти</a>
+				{% else %}
+					<a href="/auth" class="header-item"><i class="mdi mdi-login-variant"></i>Войти</a>
+				{% endif %}
+			</div>
+		</header>
+		<main>
+			{% block content %}{% endblock %}
+		</main>
+		<footer>
+		</footer>
+		{# <script src="/js/main.js"></script> #}
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

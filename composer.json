@@ -1,0 +1,19 @@
+{
+	"require": {
+		"oomphinc/composer-installers-extender": "^1.1",
+
+		"pandora3/core": "^1.0",
+		"pandora3/libs": "^1.0"
+	},
+
+	"extra": {
+		"installer-types": ["library", "pandora3-lib", "pandora3-core", "pandora3-plugin", "pandora3-widget"],
+		"installer-paths": {
+			"vendor/pandora3/.meta/{$name}": ["pandora3/libs", "pandora3/plugins", "pandora3/widgets"],
+			"vendor/pandora3/Core/": ["pandora3/core"],
+			"vendor/pandora3/Libs/{$name}/": ["type:pandora3-lib"],
+			"vendor/pandora3/Plugin/{$name}/": ["type:pandora3-plugin"],
+			"vendor/pandora3/Widget/{$name}/": ["type:pandora3-widget"]
+		}
+	}
+}
